@@ -1,0 +1,84 @@
+:root {
+    --bg: linear-gradient(135deg, #74ebd5, #9face6);
+    --card: #ffffff;
+    --text: #000;
+}
+
+body {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    transition: 0.4s;
+}
+
+.weather-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+.fade-in { animation: fadeIn 0.8s ease-in; }
+.slide-up { animation: slideUp 0.6s ease-in; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Themes */
+.sunny { --bg: linear-gradient(135deg, #fddb92, #d1fdff); }
+.rainy { --bg: linear-gradient(135deg, #667db6, #0082c8); }
+.cloudy { --bg: linear-gradient(135deg, #bdc3c7, #2c3e50); }
+.snowy { --bg: linear-gradient(135deg, #e6dada, #274046); }
+
+/* Dark Mode */
+.dark {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #ffffff;
+}
+
+.temp {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+/* Hourly Forecast */
+.hourly-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.hour-card {
+    min-width: 90px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.dark .hour-card {
+    background: rgba(0,0,0,0.4);
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 14px;
+}
